@@ -14,18 +14,31 @@ int main() {
     int avail[10];
 
     cout << "\nEnter Allocation Matrix:\n";
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < m; j++)
+
+    for (int i = 0; i < n; i++) {
+        cout << "For P" << i << ":\n";
+        for (int j = 0; j < m; j++) {
+            cout << "Allocation for Resource R" << j << ": ";
             cin >> alloc[i][j];
+        }
+    }
 
     cout << "\nEnter Max Matrix:\n";
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < m; j++)
+
+    for (int i = 0; i < n; i++) {
+        cout << "For P" << i << ":\n";
+        for (int j = 0; j < m; j++) {
+            cout << "Max for Resource R" << j << ": ";
             cin >> max[i][j];
+        }
+    }
 
     cout << "\nEnter Available Resources:\n";
-    for (int j = 0; j < m; j++)
+
+    for (int j = 0; j < m; j++) {
+        cout << "Available of R" << j << ": ";
         cin >> avail[j];
+    }
 
     // Calculate Need
     for (int i = 0; i < n; i++)
@@ -72,7 +85,9 @@ int main() {
         }
     }
 
-    cout << "\nSystem is in SAFE state\nSafe Sequence: ";
+    cout << "\nSystem is in SAFE state\n";
+    cout << "Safe Sequence: ";
+
     for (int i = 0; i < n; i++)
         cout << "P" << safeSeq[i] << " ";
 
